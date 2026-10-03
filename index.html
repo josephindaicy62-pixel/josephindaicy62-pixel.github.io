@@ -1,221 +1,2548 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Career Snapshot</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Jose | Emerald Digital Space| Personal Website</title>
+
     <style>
-        body{
+
+        /* =====================================================
+           BASIC RESET
+        ===================================================== */
+
+        * {
             margin: 0;
-            background: linear-gradient(to right,black,darkblue,black);
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
-        .box1{
-    text-align:center;
-    margin-top:20px;
-}
 
-.box1 h1{
-    color: gold;
-    font-size:55px;
-    overflow:hidden;
-    white-space:nowrap;
-    border-right:4px solid white;
-    width:0;
-    margin:auto;
 
-    animation:
-    typing 2s steps(18,end) forwards,
-    blink .7s infinite;
-}
+        body {
 
-@keyframes typing{
-    from{
-        width:0;
-    }
-    to{
-        width:20ch;
-    }
-}
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-@keyframes blink{
-    50%{
-        border-color:transparent;
-    }
-}
-.container{
-    display:flex;
-    justify-content:space-around;
-    align-items:center;
-    margin-top:30px;
-}
+            background:
+                #02140d;
 
-        .box2{
-            width: 45vw;
-            height: 71vh;
-            font-size: x-large;
-            text-align: center;
-            color:white;
-            border-radius: 30px;
-            animation: slideUp 3s ease-out forwards;
+            color: white;
+
+            overflow-x: hidden;
         }
-        .box2 h3{
-            color:aqua;
+
+
+        /* =====================================================
+           EMERALD BACKGROUND
+        ===================================================== */
+
+        body::before {
+
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 15% 20%,
+                    rgba(0, 255, 170, 0.13),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 85% 70%,
+                    rgba(16, 185, 129, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(0, 255, 140, 0.05),
+                    transparent 40%
+                );
+
+            pointer-events: none;
+
+            z-index: -3;
         }
-         @keyframes slideUp{
-            from{
-                transform:translateY(150px);
-                opacity:0;
+
+
+        /* =====================================================
+           PARTICLE BACKGROUND
+        ===================================================== */
+
+        #particles {
+
+            position: fixed;
+
+            inset: 0;
+
+            overflow: hidden;
+
+            z-index: -2;
+
+            pointer-events: none;
+        }
+
+
+        .particle {
+
+            position: absolute;
+
+            width: 3px;
+
+            height: 3px;
+
+            background:
+                #34d399;
+
+            border-radius: 50%;
+
+            opacity: 0.6;
+
+            box-shadow:
+                0 0 10px #10b981;
+
+            animation:
+                floating 8s infinite ease-in-out;
+        }
+
+
+        @keyframes floating {
+
+            0% {
+
+                transform:
+                    translateY(0);
+
+                opacity: 0.2;
             }
-            to{
-                transform:translateY(0);
-                opacity:1;
+
+            50% {
+
+                transform:
+                    translateY(-50px);
+
+                opacity: 1;
+            }
+
+            100% {
+
+                transform:
+                    translateY(0);
+
+                opacity: 0.2;
             }
         }
-.box3 {
-    width: 290px;
-    height: 290px;
-    border-radius: 50%;
-    overflow: hidden;
-    position: relative;
 
-    border: 5px solid gold;
-    box-shadow: 0 0 25px aqua;
 
-    animation: float 3s ease-in-out infinite;
-}
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
 
-.box3 img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+        nav {
 
-    opacity: 0;
-    animation: imageChange 6s infinite;
-}
+            position: fixed;
 
-/* First picture */
-.box3 img:nth-child(1) {
-    animation-delay: 0s;
-}
+            top: 0;
 
-/* Second picture */
-.box3 img:nth-child(2) {
-    animation-delay: 3s;
-}
+            left: 0;
 
-@keyframes imageChange {
+            width: 100%;
 
-    0% {
-        opacity: 0;
-        transform: scale(1);
-    }
+            display: flex;
 
-    10% {
-        opacity: 1;
-        transform: scale(1.05);
-    }
+            justify-content: space-between;
 
-    40% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
+            align-items: center;
 
-    50% {
-        opacity: 0;
-        transform: scale(1.15);
-    }
+            padding: 18px 8%;
 
-    100% {
-        opacity: 0;
-    }
-}
+            background:
+                rgba(1, 20, 13, 0.88);
 
-/* Floating effect */
-@keyframes float {
+            backdrop-filter:
+                blur(18px);
 
-    0% {
-        transform: translateY(0);
-    }
+            border-bottom:
+                1px solid
+                rgba(52, 211, 153, 0.15);
 
-    50% {
-        transform: translateY(-15px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
-}        
-        .box4{
-            font-size: 20px;
-            text-align: center;
-            background-color: darkkhaki;
-            border-radius: 150px;
+            z-index: 1000;
         }
 
-@media (max-width:740px){
 
-    .container{
-        flex-direction:column;
-    }
+        .logo {
 
-    .box1 h1{
-        font-size:35px;
-        width:100%;
-        white-space:normal;
-        border-right:none;
-    }
+            font-size: 23px;
 
-    .box2{
-        width:70%;
-        height:auto;
-        font-size:18px;
-        margin-top:20px;
-    }
+            font-weight: bold;
 
-    .box3{
-    width:290px;
-    height:290px;
-    border-radius:50%;
-    overflow:hidden;
-}
-    }
+            color:
+                #34d399;
 
-    .box4{
-        width:90%;
-        margin:20px auto;
-        font-size:16px;
-    }
-}        }
+            text-shadow:
+                0 0 15px
+                rgba(52, 211, 153, 0.5);
+        }
+
+
+        .logo span {
+
+            color:
+                white;
+        }
+
+
+        nav ul {
+
+            display: flex;
+
+            gap: 24px;
+
+            list-style: none;
+        }
+
+
+        nav ul li a {
+
+            color:
+                #b8c9c2;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        nav ul li a:hover {
+
+            color:
+                #34d399;
+
+            text-shadow:
+                0 0 10px
+                rgba(52, 211, 153, 0.5);
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding:
+                130px 20px 70px;
+        }
+
+
+        .hero-content {
+
+            max-width: 1000px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+        }
+
+
+        /* =====================================================
+           PROFILE PHOTO
+        ===================================================== */
+
+        .profile-wrapper {
+
+            width: 190px;
+
+            height: 190px;
+
+            padding: 6px;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #34d399,
+                    #10b981,
+                    #059669,
+                    #6ee7b7
+                );
+
+            box-shadow:
+                0 0 25px
+                rgba(52, 211, 153, 0.35),
+
+                0 0 70px
+                rgba(16, 185, 129, 0.18);
+
+            margin-bottom: 30px;
+
+            animation:
+                photoGlow 3s infinite ease-in-out;
+        }
+
+
+        .profile-photo {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            border:
+                5px solid
+                #02140d;
+
+            display: block;
+        }
+
+
+        @keyframes photoGlow {
+
+            0% {
+
+                transform:
+                    translateY(0);
+
+                box-shadow:
+                    0 0 25px
+                    rgba(52, 211, 153, 0.35);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-7px);
+
+                box-shadow:
+                    0 0 45px
+                    rgba(52, 211, 153, 0.55);
+            }
+
+            100% {
+
+                transform:
+                    translateY(0);
+
+                box-shadow:
+                    0 0 25px
+                    rgba(52, 211, 153, 0.35);
+            }
+        }
+
+
+        .status {
+
+            display: inline-block;
+
+            padding:
+                8px 18px;
+
+            border:
+                1px solid
+                #34d399;
+
+            border-radius:
+                30px;
+
+            color:
+                #34d399;
+
+            font-size: 13px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 0 20px
+                rgba(52, 211, 153, 0.15);
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(50px, 9vw, 95px);
+
+            line-height: 1;
+
+            margin-bottom: 25px;
+        }
+
+
+        .gradient {
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #34d399,
+                    #10b981,
+                    #6ee7b7
+                );
+
+            -webkit-background-clip:
+                text;
+
+            background-clip:
+                text;
+
+            color:
+                transparent;
+        }
+
+
+        .hero h2 {
+
+            color:
+                #b8c9c2;
+
+            font-size:
+                clamp(20px, 3vw, 30px);
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero p {
+
+            color:
+                #91a49b;
+
+            max-width:
+                700px;
+
+            margin:
+                auto;
+
+            line-height:
+                1.8;
+
+            font-size:
+                17px;
+        }
+
+
+        .buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            padding:
+                13px 25px;
+
+            border-radius:
+                30px;
+
+            border:
+                1px solid
+                #34d399;
+
+            text-decoration:
+                none;
+
+            color:
+                #34d399;
+
+            transition:
+                0.3s;
+        }
+
+
+        .btn.primary {
+
+            background:
+                #34d399;
+
+            color:
+                #02140d;
+
+            font-weight:
+                bold;
+        }
+
+
+        .btn:hover {
+
+            transform:
+                translateY(-5px);
+
+            box-shadow:
+                0 0 25px
+                rgba(52, 211, 153, 0.35);
+        }
+
+
+        /* =====================================================
+           COMMON SECTION
+        ===================================================== */
+
+        section {
+
+            padding:
+                100px 8%;
+        }
+
+
+        .section-title {
+
+            text-align:
+                center;
+
+            font-size:
+                40px;
+
+            margin-bottom:
+                15px;
+
+            color:
+                white;
+        }
+
+
+        .section-subtitle {
+
+            text-align:
+                center;
+
+            color:
+                #71857c;
+
+            margin-bottom:
+                60px;
+        }
+
+
+        /* =====================================================
+           ABOUT
+        ===================================================== */
+
+        .about {
+
+            max-width:
+                1100px;
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap:
+                30px;
+        }
+
+
+        .card {
+
+            padding:
+                35px;
+
+            border-radius:
+                25px;
+
+            background:
+                rgba(16, 185, 129, 0.045);
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.13);
+
+            transition:
+                0.4s;
+        }
+
+
+        .card:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                #34d399;
+
+            box-shadow:
+                0 15px 50px
+                rgba(16, 185, 129, 0.10);
+        }
+
+
+        .card h3 {
+
+            color:
+                #34d399;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .card p {
+
+            color:
+                #91a49b;
+
+            line-height:
+                1.8;
+        }
+
+
+        /* =====================================================
+           QUICK FACTS
+        ===================================================== */
+
+        .facts {
+
+            max-width:
+                1100px;
+
+            margin:
+                35px auto 0;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap:
+                15px;
+        }
+
+
+        .fact {
+
+            text-align:
+                center;
+
+            padding:
+                25px 15px;
+
+            border-radius:
+                20px;
+
+            background:
+                rgba(16, 185, 129, 0.045);
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.13);
+        }
+
+
+        .fact h2 {
+
+            color:
+                #34d399;
+
+            font-size:
+                32px;
+
+            margin-bottom:
+                8px;
+        }
+
+
+        .fact p {
+
+            color:
+                #71857c;
+        }
+
+
+        /* =====================================================
+           SKILLS
+        ===================================================== */
+
+        .skills {
+
+            max-width:
+                950px;
+
+            margin:
+                auto;
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            justify-content:
+                center;
+
+            gap:
+                15px;
+        }
+
+
+        .skill {
+
+            padding:
+                15px 22px;
+
+            border-radius:
+                50px;
+
+            background:
+                rgba(16, 185, 129, 0.045);
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.25);
+
+            color:
+                #d7e4df;
+
+            cursor:
+                pointer;
+
+            transition:
+                0.3s;
+        }
+
+
+        .skill:hover {
+
+            background:
+                #34d399;
+
+            color:
+                #02140d;
+
+            transform:
+                translateY(-5px)
+                scale(1.05);
+
+            box-shadow:
+                0 0 20px
+                rgba(52, 211, 153, 0.3);
+        }
+
+
+        /* =====================================================
+           EDUCATION
+        ===================================================== */
+
+        .education {
+
+            max-width:
+                900px;
+
+            margin:
+                auto;
+        }
+
+
+        .education-card {
+
+            padding:
+                35px;
+
+            margin-bottom:
+                20px;
+
+            border-left:
+                3px solid
+                #34d399;
+
+            background:
+                rgba(16, 185, 129, 0.045);
+
+            border-radius:
+                0 20px 20px 0;
+
+            transition:
+                0.3s;
+        }
+
+
+        .education-card:hover {
+
+            transform:
+                translateX(8px);
+
+            background:
+                rgba(16, 185, 129, 0.07);
+        }
+
+
+        .education-card span {
+
+            color:
+                #34d399;
+
+            font-size:
+                14px;
+        }
+
+
+        .education-card h3 {
+
+            margin:
+                10px 0;
+        }
+
+
+        .education-card p {
+
+            color:
+                #7f938a;
+
+            line-height:
+                1.7;
+
+            margin-top:
+                6px;
+        }
+
+
+        /* =====================================================
+           JOURNEY
+        ===================================================== */
+
+        .timeline {
+
+            max-width:
+                850px;
+
+            margin:
+                auto;
+
+            border-left:
+                2px solid
+                #34d399;
+
+            padding-left:
+                30px;
+        }
+
+
+        .timeline-item {
+
+            position:
+                relative;
+
+            margin-bottom:
+                45px;
+        }
+
+
+        .timeline-item::before {
+
+            content:
+                "";
+
+            position:
+                absolute;
+
+            width:
+                13px;
+
+            height:
+                13px;
+
+            border-radius:
+                50%;
+
+            background:
+                #34d399;
+
+            left:
+                -38px;
+
+            top:
+                5px;
+
+            box-shadow:
+                0 0 15px
+                #34d399;
+        }
+
+
+        .timeline-item span {
+
+            color:
+                #34d399;
+
+            font-size:
+                14px;
+        }
+
+
+        .timeline-item h3 {
+
+            margin:
+                8px 0;
+        }
+
+
+        .timeline-item p {
+
+            color:
+                #7f938a;
+
+            line-height:
+                1.7;
+        }
+
+
+        /* =====================================================
+           ACHIEVEMENTS
+        ===================================================== */
+
+        .achievements {
+
+            max-width:
+                1000px;
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap:
+                20px;
+        }
+
+
+        .achievement {
+
+            padding:
+                30px;
+
+            text-align:
+                center;
+
+            border-radius:
+                25px;
+
+            background:
+                rgba(16, 185, 129, 0.045);
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.12);
+
+            transition:
+                0.3s;
+        }
+
+
+        .achievement:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                #34d399;
+        }
+
+
+        .achievement .icon {
+
+            font-size:
+                45px;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .achievement h3 {
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .achievement p {
+
+            color:
+                #7f938a;
+
+            line-height:
+                1.6;
+        }
+
+
+        /* =====================================================
+           CERTIFICATES
+        ===================================================== */
+
+        .certificates {
+
+            max-width:
+                1000px;
+
+            margin:
+                auto;
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap:
+                20px;
+        }
+
+
+        .certificate {
+
+            padding:
+                28px;
+
+            border-radius:
+                20px;
+
+            background:
+                rgba(16, 185, 129, 0.045);
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.12);
+
+            transition:
+                0.3s;
+        }
+
+
+        .certificate:hover {
+
+            transform:
+                translateY(-5px);
+
+            border-color:
+                #34d399;
+
+            box-shadow:
+                0 10px 35px
+                rgba(16, 185, 129, 0.08);
+        }
+
+
+        .certificate h3 {
+
+            color:
+                #34d399;
+
+            margin-bottom:
+                10px;
+        }
+
+
+        .certificate p {
+
+            color:
+                #82968d;
+
+            line-height:
+                1.7;
+
+            white-space:
+                pre-line;
+        }
+
+
+        /* =====================================================
+           TERMINAL
+        ===================================================== */
+
+        .terminal {
+
+            max-width:
+                850px;
+
+            margin:
+                auto;
+
+            background:
+                #031a11;
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.25);
+
+            border-radius:
+                20px;
+
+            overflow:
+                hidden;
+
+            box-shadow:
+                0 20px 70px
+                rgba(0,0,0,0.4);
+        }
+
+
+        .terminal-top {
+
+            padding:
+                13px 18px;
+
+            background:
+                #06261a;
+
+            color:
+                #6f877d;
+        }
+
+
+        .terminal-body {
+
+            padding:
+                30px;
+
+            font-family:
+                monospace;
+
+            color:
+                #6ee7b7;
+
+            line-height:
+                2;
+        }
+
+
+        .cursor {
+
+            animation:
+                blink 1s infinite;
+        }
+
+
+        @keyframes blink {
+
+            50% {
+                opacity:
+                    0;
+            }
+        }
+
+
+        /* =====================================================
+           CONTACT
+        ===================================================== */
+
+        .contact {
+
+            text-align:
+                center;
+        }
+
+
+        .contact-box {
+
+            max-width:
+                700px;
+
+            margin:
+                auto;
+
+            padding:
+                45px;
+
+            border-radius:
+                30px;
+
+            background:
+                rgba(16, 185, 129, 0.045);
+
+            border:
+                1px solid
+                rgba(52, 211, 153, 0.15);
+        }
+
+
+        .contact-box p {
+
+            color:
+                #82968d;
+
+            line-height:
+                1.7;
+
+            margin-bottom:
+                25px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            text-align:
+                center;
+
+            padding:
+                30px;
+
+            border-top:
+                1px solid
+                rgba(52, 211, 153, 0.12);
+
+            color:
+                #52675e;
+        }
+
+
+        /* =====================================================
+           SCROLLBAR
+        ===================================================== */
+
+        ::-webkit-scrollbar {
+
+            width:
+                8px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background:
+                #02140d;
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background:
+                #10b981;
+
+            border-radius:
+                10px;
+        }
+
+
+        ::-webkit-scrollbar-thumb:hover {
+
+            background:
+                #34d399;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width: 800px) {
+
+            nav ul {
+
+                display:
+                    none;
+            }
+
+
+            section {
+
+                padding:
+                    80px 5%;
+            }
+
+
+            .about {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .facts {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+
+            .achievements {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .certificates {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    55px;
+            }
+
+
+            .profile-wrapper {
+
+                width:
+                    160px;
+
+                height:
+                    160px;
+            }
+        }
+
+
+        @media(max-width: 500px) {
+
+            .facts {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .hero h1 {
+
+                font-size:
+                    48px;
+            }
+
+
+            .hero h2 {
+
+                font-size:
+                    20px;
+            }
+
+
+            .terminal-body {
+
+                padding:
+                    20px;
+
+                font-size:
+                    12px;
+            }
+
+
+            .profile-wrapper {
+
+                width:
+                    140px;
+
+                height:
+                    140px;
+            }
+        }
+
     </style>
-</head>
-<body>
-    <div class="box1">
-         <h1>JOSEPHIN SILVIYA</h1>
-    </div>
-    <div class="container">
-    <div class="box2">
-        <h1>Josephin Silviya E</h1>
-        <h2>UI/UX Designer</h2>
-        <P>Hi! I'm Jose,Pre Final Year Student.
-            I'm currently pursuing Anna University Regional Campus Madurai.
-            Aspiring Innovator,UI/UX Designer,Solving problems in Python ,building real world project in  python
-            and also an Elocutionist Student.
-            My dream is to develop a Greeny Country.
-            My CGPA: 8.54
 
-        </P>
-        <h3>
-            Do Justly.Love Mercy.Walk Humbly 
-        </h3>
-    </div>
-    <div class="box3">
-    <img src="WhatsApp Image 2026-09-04 at 10.20.29 PM.jpeg" alt="Photo 1">
-    <img src="WhatsApp Image 2026-09-04 at 10.39.44 PM.jpeg" alt="Photo 2">
-</div>
-    </div>
-    <div class="box4">
-         <h2>josephindaicy62@gmail.com</h2>
-    </div>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         ANIMATED BACKGROUND
+    ====================================================== -->
+
+    <div id="particles"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav>
+
+        <div class="logo">
+            Jose<span>.exe</span>
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="#education">
+                    Education
+                </a>
+            </li>
+
+            <li>
+                <a href="#journey">
+                    Journey
+                </a>
+            </li>
+
+            <li>
+                <a href="#achievements">
+                    Achievements
+                </a>
+            </li>
+
+            <li>
+                <a href="#certificates">
+                    Certificates
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- =====================================================
+         HOME
+    ====================================================== -->
+
+    <section
+        class="hero"
+        id="home">
+
+        <div class="hero-content">
+
+
+            <!-- PROFILE PHOTO -->
+
+            <div class="profile-wrapper">
+
+                <img
+                    src="profile.jpg.jpeg"
+                    alt="Jose Profile Photo"
+                    class="profile-photo">
+
+            </div>
+
+
+            <div class="status">
+
+                ● SYSTEM ONLINE
+
+            </div>
+
+
+            <h1>
+
+                Hi, I'm
+
+                <br>
+
+                <span class="gradient">
+                    Jose
+                </span>
+
+            </h1>
+
+
+            <h2>
+
+                Computer Science Engineering Student
+
+            </h2>
+
+
+            <p>
+
+                Technology explorer • Problem solver •
+                Lifelong learner
+
+                <br>
+
+                Welcome to my digital universe.
+
+            </p>
+
+
+            <div class="buttons">
+
+                <a
+                    href="#about"
+                    class="btn primary">
+
+                    Explore Me
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn">
+
+                    Let's Connect
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ABOUT ME
+    ====================================================== -->
+
+    <section id="about">
+
+
+        <h2 class="section-title">
+
+            About Me
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            More than just a profile
+
+        </p>
+
+
+        <div class="about">
+
+
+            <div class="card">
+
+                <h3>
+
+                    👋 Who Am I?
+
+                </h3>
+
+
+                <p>
+
+                    I'm Josephin Silviya E, a Computer Science
+                    Engineering student who enjoys exploring
+                    technology, learning new concepts and
+                    turning ideas into practical solutions.
+
+                    My CGPA is 8.52 and my biggest dream is
+                    to develop a green and healthy future
+                    through technology.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    I'm interested in Artificial Intelligence,
+                    Python and UI/UX designing, along with
+                    emerging technologies.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>
+
+                    🚀 My Mindset
+
+                </h3>
+
+
+                <p>
+
+                    I believe technology is not only about
+                    writing code. It is about understanding
+                    problems, thinking creatively and creating
+                    useful solutions.
+
+                </p>
+
+
+                <br>
+
+
+                <p>
+
+                    My approach is:
+
+                    <b>
+                        Concentrate → Understand → Practice
+                    </b>
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="facts">
+
+
+            <div class="fact">
+
+                <h2>
+                    ∞
+                </h2>
+
+                <p>
+                    Curiosity
+                </p>
+
+            </div>
+
+
+            <div class="fact">
+
+                <h2>
+                    24/7
+                </h2>
+
+                <p>
+                    Learning
+                </p>
+
+            </div>
+
+
+            <div class="fact">
+
+                <h2>
+                    AI
+                </h2>
+
+                <p>
+                    Exploring
+                </p>
+
+            </div>
+
+
+            <div class="fact">
+
+                <h2>
+                    IoT
+                </h2>
+
+                <p>
+                    Exploring
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SKILLS
+    ====================================================== -->
+
+    <section id="skills">
+
+
+        <h2 class="section-title">
+
+            My Skill Constellation
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            Technologies I'm learning and exploring
+
+        </p>
+
+
+        <div class="skills">
+
+
+            <div class="skill">
+                🐍 Python
+            </div>
+
+
+            <div class="skill">
+                🌐 HTML
+            </div>
+
+
+            <div class="skill">
+                🎨 CSS
+            </div>
+
+
+            <div class="skill">
+                ⚡ JavaScript
+            </div>
+
+
+            <div class="skill">
+                🤖 Artificial Intelligence
+            </div>
+
+
+            <div class="skill">
+                🧠 Machine Learning
+            </div>
+
+
+            <div class="skill">
+                🗄️ MySQL
+            </div>
+
+
+            <div class="skill">
+                🐙 GitHub
+            </div>
+
+
+            <div class="skill">
+                📊 Data Science
+            </div>
+
+
+            <div class="skill">
+                🎨 UI/UX Design
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         EDUCATION
+    ====================================================== -->
+
+    <section id="education">
+
+
+        <h2 class="section-title">
+
+            Education
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            My academic journey
+
+        </p>
+
+
+        <div class="education">
+
+
+            <div class="education-card">
+
+
+                <span>
+                    CURRENT
+                </span>
+
+
+                <h3>
+
+                    🎓 B.E. Computer Science
+                    and Engineering
+
+                </h3>
+
+
+                <p>
+
+                    Anna University Regional
+                    Campus, Madurai
+
+                </p>
+
+
+                <p>
+
+                    Currently pursuing my
+                    undergraduate degree while
+                    developing my knowledge in
+                    Computer Science and emerging
+                    technologies.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="education-card">
+
+
+                <span>
+                    FOUNDATION
+                </span>
+
+
+                <h3>
+
+                    📚 Higher Secondary Education
+
+                </h3>
+
+
+                <p>
+
+                    My academic foundation helped me
+                    begin my journey towards Computer
+                    Science and Engineering.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         JOURNEY
+    ====================================================== -->
+
+    <section id="journey">
+
+
+        <h2 class="section-title">
+
+            My Journey
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            One step at a time
+
+        </p>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item">
+
+
+                <span>
+                    2024
+                </span>
+
+
+                <h3>
+
+                    🌱 Started My Technology Journey
+
+                </h3>
+
+
+                <p>
+
+                    Began developing my foundations
+                    in programming and computer
+                    science.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="timeline-item">
+
+
+                <span>
+                    2025
+                </span>
+
+
+                <h3>
+
+                    💻 Exploring Technology
+
+                </h3>
+
+
+                <p>
+
+                    Started exploring programming,
+                    web technologies, databases
+                    and software development.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="timeline-item">
+
+
+                <span>
+                    2026
+                </span>
+
+
+                <h3>
+
+                    🚀 Exploring AI & Python, UI/UX
+
+                </h3>
+
+
+                <p>
+
+                    Expanded my learning into
+                    Artificial Intelligence, Python,
+                    Machine Learning, UI/UX Design
+                    and interdisciplinary technology.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="timeline-item">
+
+
+                <span>
+                    FUTURE
+                </span>
+
+
+                <h3>
+
+                    🌌 Keep Exploring
+
+                </h3>
+
+
+                <p>
+
+                    Continue learning, improving
+                    my skills and exploring new
+                    technologies.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ACHIEVEMENTS
+    ====================================================== -->
+
+    <section id="achievements">
+
+
+        <h2 class="section-title">
+
+            Achievements
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            Milestones in my journey
+
+        </p>
+
+
+        <div class="achievements">
+
+
+            <div class="achievement">
+
+
+                <div class="icon">
+                    🏆
+                </div>
+
+
+                <h3>
+
+                    Hackathons
+
+                </h3>
+
+
+                <p>
+
+                    Participating in technology
+                    challenges and exploring
+                    innovative ideas.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="achievement">
+
+
+                <div class="icon">
+                    🎤
+                </div>
+
+
+                <h3>
+
+                    Communication
+
+                </h3>
+
+
+                <p>
+
+                    Interested in public speaking,
+                    presentations and expressing
+                    ideas confidently.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="achievement">
+
+
+                <div class="icon">
+                    🌱
+                </div>
+
+
+                <h3>
+
+                    Continuous Learning
+
+                </h3>
+
+
+                <p>
+
+                    Continuously exploring
+                    technologies and expanding
+                    my technical knowledge.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CERTIFICATES
+    ====================================================== -->
+
+    <section id="certificates">
+
+
+        <h2 class="section-title">
+
+            Certificates & Learning
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            Knowledge beyond the classroom
+
+        </p>
+
+
+        <div class="certificates">
+
+
+            <div class="certificate">
+
+                <h3>
+
+                    🐍 Python
+
+                </h3>
+
+
+                <p>
+
+                    I completed a Python course at
+                    Elewayte Technologies, where I gained
+                    practical knowledge of Python programming
+                    and strengthened my problem-solving and
+                    coding skills.
+
+                    Through this course, I learned the
+                    fundamentals of Python and developed
+                    a strong interest in programming and
+                    software development.
+
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>
+
+                    🎨 UI/UX Design
+
+                </h3>
+
+
+                <p>
+
+                    I completed UI/UX design learning and
+                    gained knowledge about user interface
+                    design, user experience principles and
+                    creating user-friendly digital interfaces.
+
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>
+
+                    💻 Internship Experience
+
+                </h3>
+
+
+                <p>
+
+                    ELEWAYTE TECHNOLOGIES
+                    Python Development Intern
+
+                    📌 Duration: Several months
+
+                    Worked with Python programming and
+                    problem-solving.
+
+                    Practiced developing and improving
+                    Python-based applications.
+
+                    Gained practical experience in
+                    programming and software development.
+
+
+                    INTERNPE
+                    UI/UX Design Intern
+
+                    📌 Duration: Several months
+
+                    Worked on UI/UX design concepts and
+                    interface development.
+
+                    Gained practical experience in
+                    designing user-friendly interfaces.
+
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>
+
+                    🏅 Government Typing Certificates
+
+                </h3>
+
+
+                <p>
+
+                    Government Typing Certificate –
+                    Tamil
+
+                    Government Typing Certificate –
+                    English
+
+                    I have completed government-certified
+                    typing qualifications in both Tamil
+                    and English.
+
+                </p>
+
+            </div>
+
+
+            <div class="certificate">
+
+                <h3>
+
+                    🎤 Webinars & Learning
+
+                </h3>
+
+
+                <p>
+
+                    Participated in webinars and learning
+                    sessions related to technology,
+                    emerging concepts and professional
+                    development.
+
+                    These experiences helped me gain
+                    exposure beyond regular classroom
+                    learning.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DIGITAL IDENTITY
+    ====================================================== -->
+
+    <section>
+
+
+        <h2 class="section-title">
+
+            My Digital Identity
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            A glimpse Into Who I am
+
+        </p>
+
+
+        <div class="terminal">
+
+
+            <div class="terminal-top">
+
+                ● ● ● &nbsp;&nbsp;
+                jose@universe:~
+
+            </div>
+
+
+            <div class="terminal-body">
+
+
+                $ whoami
+
+                <br>
+
+                > Computer Science Engineering Student
+
+                <br><br>
+
+
+                $ interests
+
+                <br>
+
+                > AI + Python + UI/UX Design
+
+                <br><br>
+
+
+                $ mindset
+
+                <br>
+
+                > Concentrate → Understand → Practice
+
+                <br><br>
+
+
+                $ mission
+
+                <br>
+
+                > Turn ideas into useful technology
+
+                <span class="cursor">
+                    _
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section
+        id="contact"
+        class="contact">
+
+
+        <h2 class="section-title">
+
+            Let's Connect
+
+        </h2>
+
+
+        <p class="section-subtitle">
+
+            Have an idea? Let's talk.
+
+        </p>
+
+
+        <div class="contact-box">
+
+
+            <p>
+
+                I'm always interested in learning,
+                collaborating and exploring new
+                technology ideas.
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a
+                    href="mailto:josephindaicy62@gmail.com"
+                    class="btn primary">
+
+                    📧 Email Me
+
+                </a>
+
+
+                <a
+                    href="https://github.com/josephindaicy62-pixel"
+                    target="_blank"
+                    class="btn">
+
+                    🐙 GitHub
+
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/josephin-silviya-e-87023a32a/"
+                    target="_blank"
+                    class="btn">
+
+                    💼 LinkedIn
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        © 2026 Jose.exe
+
+        <br>
+
+        Built with curiosity • creativity • code 🚀
+
+    </footer>
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+
+        /* =================================================
+           CREATE EMERALD PARTICLES
+        ================================================= */
+
+
+        const particleContainer =
+            document.getElementById("particles");
+
+
+        for (
+            let i = 0;
+            i < 120;
+            i++
+        ) {
+
+
+            const particle =
+                document.createElement("div");
+
+
+            particle.className =
+                "particle";
+
+
+            particle.style.left =
+                Math.random() * 100 + "%";
+
+
+            particle.style.top =
+                Math.random() * 100 + "%";
+
+
+            particle.style.animationDelay =
+                Math.random() * 8 + "s";
+
+
+            particle.style.animationDuration =
+                (5 + Math.random() * 8) + "s";
+
+
+            const size =
+                2 + Math.random() * 3;
+
+
+            particle.style.width =
+                size + "px";
+
+
+            particle.style.height =
+                size + "px";
+
+
+            particleContainer.appendChild(
+                particle
+            );
+
+        }
+
+
+    </script>
+
+
 </body>
+
+</html>
+    
+
 </html>
